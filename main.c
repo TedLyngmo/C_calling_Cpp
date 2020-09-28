@@ -1,4 +1,4 @@
-#include "c_interface.h"
+#include "cube.h"
 
 #include <stdio.h>
 

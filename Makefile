@@ -12,17 +12,17 @@ all : $(EXE)
 	@echo Running main_cpp
 	./main_cpp
 
-main_cpp : main.cpp classes.hpp libclasses.a Makefile
+main_cpp : main.cpp cube.hpp libclasses.a Makefile
 	@echo Linking a C++ program with libclasses.a
 	$(CXX) $(CXXVER) $(OPTS) -o $@ $< -L. -lclasses
 
-main_c : main.c c_interface.h libclasses.a Makefile
+main_c : main.c cube.h libclasses.a Makefile
 	@echo Linking a C program with libclasses.a and the C++ standard library
 	$(CC) $(CVER) $(OPTS) -o $@ $< -L. -lclasses -lstdc++
 
-libclasses.a : classes.o Makefile
+libclasses.a : cube.o Makefile
 	@echo Creating a static library of C++ classes and C functions
-	$(AR) rvs $@ $<
+	$(AR) rcu $@ $<
 
 %.o : %.cpp %.hpp Makefile
 	$(CXX) $(CXXVER) $(OPTS) -c -o $@ $<

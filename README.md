@@ -4,9 +4,9 @@ This is an example of how you can create a C++ library with classes and
 how you can provide C functions for interacting with C++ objects in the
 library.
 
-#### `classes.hpp`
+#### `cube.hpp`
 
-This contains a simple class called `Cube`:
+This contains a simple C++ class called `Cube`:
 ```
 class Cube {
 public:
@@ -20,7 +20,7 @@ private:
 };
 ```
 
-#### `c_interface.h`
+#### `cube.h`
 
 This contains declarations of functions with C linkage to be able to create
 `Cube` objects and call `Cube` member functions.
@@ -37,7 +37,7 @@ int Cube_Volume(cube_t c);
 void Cube_Destroy(cube_t c);
 ```
 
-#### `classes.cpp`
+#### `cube.cpp`
 
 This contains the actual implementation of the C++ class' member functions as
 well as the C functions. It's used to create a common C and C++ library,

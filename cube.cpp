@@ -1,5 +1,5 @@
-#include "classes.hpp"
-#include "c_interface.h"
+#include "cube.hpp"
+#include "cube.h"
 
 #include <new>
 
